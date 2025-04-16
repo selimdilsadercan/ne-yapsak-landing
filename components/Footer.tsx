@@ -35,7 +35,6 @@ const Footer: React.FC = () => {
         </div>
         <div>
           <h4 className="text-lg font-semibold mb-4">Contact Us</h4>
-
           {footerDetails.email && (
             <a
               href={`mailto:${footerDetails.email}`}
@@ -44,16 +43,6 @@ const Footer: React.FC = () => {
               Email: {footerDetails.email}
             </a>
           )}
-
-          {footerDetails.telephone && (
-            <a
-              href={`tel:${footerDetails.telephone}`}
-              className="block text-foreground-accent hover:text-foreground"
-            >
-              Phone: {footerDetails.telephone}
-            </a>
-          )}
-
           {footerDetails.socials && (
             <div className="mt-5 flex items-center gap-5 flex-wrap">
               {Object.keys(footerDetails.socials).map((platformName) => {
@@ -79,18 +68,9 @@ const Footer: React.FC = () => {
           All rights reserved.
         </p>
         <p className="text-sm mt-2 text-gray-500">
-          Made with &hearts; by{" "}
+          Made by{" "}
           <a href="https://nexilaunch.com" target="_blank">
-            Nexi Launch
-          </a>
-        </p>
-        <p className="text-sm mt-2 text-gray-500">
-          UI kit by{" "}
-          <a
-            href="https://ui8.net/youthmind/products/fintech-finance-mobile-app-ui-kit"
-            target="_blank"
-          >
-            Youthmind
+            🔶 The Everything
           </a>
         </p>
       </div>
