@@ -1,5 +1,14 @@
 export const heroDetails = {
-    heading: 'Smart, Secure, Simple Financial Management',
-    subheading: 'From effortless budgeting to real-time investment insights, Finwise puts you in control of your money like never before',
-    centerImageSrc: '/images/hero-mockup.webp',
-}
+  heading: "Bugün ne yapsak?, Ne izlesek?, Nereye Gitsek?, Ne Oynasak?",
+  subheading: "sorunu yaşayan arkadaş grupları, çiftler, bireyler için",
+  centerImageSrc: "/images/hero-mockup.webp",
+  changingTextOptions: {
+    questions: [
+      "Bugün ne yapsak?",
+      "Ne izlesek?",
+      "Nereye Gitsek?",
+      "Ne Oynasak?",
+    ],
+    audiences: ["arkadaş grupları", "çiftler", "bireyler"],
+  },
+};
