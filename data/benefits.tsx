@@ -8,86 +8,160 @@ import {
   FiTarget,
   FiTrendingUp,
   FiUser,
+  FiMenu,
+  FiHome,
+  FiCompass,
+  FiUsers,
+  FiBook,
+  FiUserCheck,
+  FiFilter,
+  FiZap,
+  FiHeart,
+  FiFolder,
+  FiCheckCircle,
+  FiAward,
+  FiBookOpen,
+  FiDownload,
+  FiCpu,
 } from "react-icons/fi";
 import { IBenefit } from "@/types";
 import BalanceFeature from "@/components/BalanceFeature";
 import { ExploreSection } from "@/components/ExploreSection";
+import { HomeSection } from "@/components/HomeSection";
+import { LibrarySection } from "@/components/LibrarySection";
+import { FileClock } from "lucide-react";
+import { SessionSection } from "@/components/SessionSection";
+import { IntegrationSection } from "@/components/IntegrationSection";
 
 export const benefits: IBenefit[] = [
   {
-    title: "Smart Budgeting",
+    title: "Keşif Merkezin",
     description:
-      "Take the guesswork out of managing your money. Our AI-powered budgeting tool adapts to your lifestyle and helps you stay on track.",
+      "Ne izleyeceğini, ne oynayacağını ya da nereye gideceğini düşünme. Wedo ile tüm seçenekler akıllıca kategorilere ayrılır ve sana özel listelerle sunulur.",
     bullets: [
       {
-        title: "Intelligent Categorization",
+        title: "Akıllı Kategoriler",
         description:
-          "Automatically sorts your transactions for crystal-clear insights.",
+          "Film, oyun, etkinlik, mekan ve daha fazlası… İlgi alanlarına göre ayrılmış net ve sade kategorilerle hızlıca keşfet.",
         icon: <FiBarChart2 size={26} />,
       },
       {
-        title: "Customizable Goals",
-        description: "Set and track financial objectives that matter to you.",
+        title: "Kendine Özel Listeler",
+        description:
+          "“Kuşakla oynanacak oyunlar” ya da “Tek sezonda biten diziler” gibi seni tanıyan dinamik listelere göz at.",
         icon: <FiTarget size={26} />,
       },
       {
-        title: "Predictive Analysis",
+        title: "Anında Erişim",
         description:
-          "Get ahead of your finances with spending forecasts and alerts.",
+          "İzlenecekleri tek tıkla Netflix'te aç, gidilecek mekanları haritada görüntüle, oyunları doğrudan oyna.",
         icon: <FiTrendingUp size={26} />,
+      },
+    ],
+    component: <HomeSection />,
+  },
+  {
+    title: "Sana Özel Öneriler",
+    description:
+      "Wedo, geçmişte izlediklerine, oynadıklarına ve beğendiklerine göre sana özel film, oyun, etkinlik ve daha fazlasını önerir.",
+    bullets: [
+      {
+        title: "Beğendiğin Oyuncular & Yönetmenler",
+        description:
+          "Favori oyuncuların veya yönetmenlerin yeni projeleri çıktığında senin için öne çıkar.",
+        icon: <FiUserCheck size={26} />,
+      },
+      {
+        title: "Kişisel İlgi Alanlarına Göre Filtreleme",
+        description:
+          "Romantik komedi seviyorsan daha fazla o türden, yarış oyunu oynuyorsan benzer oyunlardan öneriler alırsın.",
+        icon: <FiFilter size={26} />,
+      },
+      {
+        title: "Tüm Türlerde Akıllı Öneriler",
+        description:
+          "Dizi, film, oyun, aktivite ya da video... Hangi türde neyi sevdiysen ona göre öneriler gelir.",
+        icon: <FiZap size={26} />,
       },
     ],
     component: <ExploreSection />,
   },
   {
-    title: "Seamless Investing",
+    title: "Birlikte Karar Verin",
     description:
-      "Start building wealth today, no financial degree required. Finwise makes investing accessible and straightforward.",
+      "Wedo, arkadaşlarınla veya grubunla ne izleyeceğinize, nereye gideceğinize ya da ne oynayacağınıza birlikte karar vermenizi kolaylaştırır.",
     bullets: [
       {
-        title: "Micro-Investing",
-        description: "Begin with as little as $1 and watch your money grow.",
-        icon: <FiDollarSign size={26} />,
+        title: "Oylama Oturumları",
+        description:
+          "Grup üyeleri önerilen seçenekleri oylayarak en çok beğenileni seçer. Eğlenceli ve demokratik karar alma!",
+        icon: <FiCheckCircle size={26} />,
       },
       {
-        title: "Expert Portfolios",
+        title: "Gerçek Zamanlı Katılım",
         description:
-          "Choose from investment strategies tailored to your risk tolerance.",
-        icon: <FiBriefcase size={26} />,
+          "Herkes aynı anda çevrim içi olarak oy kullanabilir, sonuçlar anlık görüntülenir.",
+        icon: <FiUsers size={26} />,
       },
       {
-        title: "Real-Time Performance",
+        title: "En Çok Beğenilenler Öne Çıkar",
         description:
-          "Track your investments with easy-to-understand metrics and visuals.",
-        icon: <FiPieChart size={26} />,
+          "Oyların toplamına göre sıralama yapılır, grupça en uygun seçenek en üstte yer alır.",
+        icon: <FiAward size={26} />,
       },
     ],
-    component: <BalanceFeature />, // TODO: Replace with InvestingFeature component
+    component: <SessionSection />,
   },
   {
-    title: "Bank-Grade Security",
+    title: "Kişisel Kitaplığın",
     description:
-      "Your financial data deserves the best protection. Rest easy knowing Finwise employs cutting-edge security measures.",
+      "Film izlerken, oyun oynarken ya da bir mekân keşfederken aklında kalan her şeyi saklayabileceğin kişisel alanın.",
     bullets: [
       {
-        title: "Military-Grade Encryption",
+        title: "Tüm Kategoriler Tek Yerde",
         description:
-          "Your information is safeguarded with the highest level of encryption.",
-        icon: <FiLock size={26} />,
+          "Film, dizi, oyun, video, etkinlik, mekan… İlgi duyduğun her şeyi türüne göre düzenli şekilde sakla.",
+        icon: <FiFolder size={26} />,
       },
       {
-        title: "Biometric Authentication",
+        title: "Daha Sonra Devam Et",
         description:
-          "Access your account securely with fingerprint or facial recognition.",
-        icon: <FiUser size={26} />,
+          "Beğendiğin ama şimdi yapamadığın şeyleri kaydet, müsait olduğunda hemen geri dön.",
+        icon: <FileClock size={26} />,
       },
       {
-        title: "Real-Time Fraud Detection",
+        title: "Favorilerini Yönet",
         description:
-          "Our system constantly monitors for suspicious activity to keep your money safe.",
-        icon: <FiShield size={26} />,
+          "Kalbine dokunan içerikleri favorilerine ekle, öncelik sırasına göre planla.",
+        icon: <FiHeart size={26} />,
       },
     ],
-    component: <BalanceFeature />, // TODO: Replace with SecurityFeature component
+    component: <LibrarySection />,
+  },
+  {
+    title: "Platformlarını Bağla",
+    description:
+      "Netflix, JustWatch, BiletiniAl, Steam ve YouTube hesaplarını Wedo'ya entegre et, izlediklerin ve merak ettiklerin otomatik olarak kütüphanene eklensin.",
+    bullets: [
+      {
+        title: "Zaman Kazandıran Otomatik Ekleme",
+        description:
+          "Daha önce izlediğin ya da oynadığın içerikleri tek tek aramakla uğraşma. Entegrasyonla otomatik olarak kaydet.",
+        icon: <FiDownload size={26} />,
+      },
+      {
+        title: "Kütüphanen Sana Özel Dolu Dolu",
+        description:
+          "Favori platformlarından gelen verilerle Wedo kütüphanen anında kişiselleşir.",
+        icon: <FiBookOpen size={26} />,
+      },
+      {
+        title: "Öneri Motoru Daha Akıllı",
+        description:
+          "Bağlı platformlardan gelen geçmiş veriler sayesinde, Wedo’nun önerileri çok daha isabetli olur.",
+        icon: <FiCpu size={26} />,
+      },
+    ],
+    component: <IntegrationSection />,
   },
 ];

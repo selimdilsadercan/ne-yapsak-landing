@@ -49,6 +49,21 @@ export const childVariants = {
 const BenefitSection: React.FC<Props> = ({ benefit, imageAtRight }: Props) => {
   const { title, description, component, bullets } = benefit;
 
+  // Determine which navigation item should be active based on the benefit title
+  const getActiveNavItem = () => {
+    if (title === "Keşif Merkezin") {
+      return "home";
+    } else if (title === "Sana Özel Öneriler") {
+      return "discover";
+    } else if (title === "Kişisel Kitaplığın") {
+      return "library";
+    } else if (title === "Birlikte Karar Verin") {
+      return "groups";
+    }
+    // Default to home if no match
+    return "other";
+  };
+
   return (
     <section className="benefit-section">
       <motion.div
@@ -98,7 +113,9 @@ const BenefitSection: React.FC<Props> = ({ benefit, imageAtRight }: Props) => {
               "justify-end": !imageAtRight,
             })}
           >
-            <IPhoneWrapper>{component}</IPhoneWrapper>
+            <IPhoneWrapper activeNavItem={getActiveNavItem()}>
+              {component}
+            </IPhoneWrapper>
           </div>
         </div>
       </motion.div>

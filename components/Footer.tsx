@@ -9,7 +9,7 @@ import Logo from "./Logo";
 const Footer: React.FC = () => {
   return (
     <footer className="bg-hero-background text-foreground py-10">
-      <div className="max-w-7xl w-full mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-10">
+      <div className="max-w-7xl w-full mx-auto px-6 flex flex-col md:flex-row md:justify-between gap-10">
         <div>
           <Link href="/" className="flex items-center gap-2">
             <Logo className="w-6 h-6 md:w-7 md:h-7" />
@@ -21,20 +21,9 @@ const Footer: React.FC = () => {
             {footerDetails.subheading}
           </p>
         </div>
+
         <div>
-          <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
-          <ul className="text-foreground-accent">
-            {footerDetails.quickLinks.map((link) => (
-              <li key={link.text} className="mb-2">
-                <Link href={link.url} className="hover:text-foreground">
-                  {link.text}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div>
-          <h4 className="text-lg font-semibold mb-4">Contact Us</h4>
+          <h4 className="text-lg font-semibold mb-4">İletişim</h4>
           {footerDetails.email && (
             <a
               href={`mailto:${footerDetails.email}`}

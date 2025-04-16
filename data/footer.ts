@@ -6,8 +6,7 @@ export const footerDetails: {
   email: string;
   socials: ISocials;
 } = {
-  subheading:
-    "Empowering businesses with cutting-edge financial technology solutions.",
+  subheading: "“Ne yapsak?” demeye son, Wedo yanınızda.",
   quickLinks: [
     {
       text: "Features",
@@ -22,7 +21,7 @@ export const footerDetails: {
       url: "#testimonials",
     },
   ],
-  email: "info@the-everything.com",
+  email: "softwarepathandcv@gmail.com",
   socials: {
     instagram: "https://www.instagram.com",
     linkedin: "https://www.linkedin.com",

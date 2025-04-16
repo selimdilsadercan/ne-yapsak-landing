@@ -8,7 +8,7 @@ interface NavItem {
 
 interface IPhoneWrapperProps {
   children: ReactNode;
-  activeNavItem?: "home" | "discover" | "groups" | "library";
+  activeNavItem?: "home" | "discover" | "groups" | "library" | "other";
 }
 
 const defaultNavItems = [

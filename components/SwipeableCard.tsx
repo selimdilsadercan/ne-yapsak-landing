@@ -111,49 +111,49 @@ function SwipeableCard({
     >
       {/* Left Indicator (NOPE) */}
       <motion.div
-        className="absolute left-4 top-4 z-10 rotate-[-20deg]"
+        className="absolute left-2 top-2 z-10 rotate-[-20deg]"
         style={{ opacity: leftIndicatorOpacity }}
       >
-        <div className="rounded-md border-4 border-red-500 px-4 py-1">
-          <span className="text-2xl font-bold text-red-500">NOPE</span>
+        <div className="rounded-md border-2 border-red-500 px-2 py-0.5">
+          <span className="text-lg font-bold text-red-500">NOPE</span>
         </div>
       </motion.div>
 
       {/* Right Indicator (LIKE) */}
       <motion.div
-        className="absolute right-4 top-4 z-10 rotate-[20deg]"
+        className="absolute right-2 top-2 z-10 rotate-[20deg]"
         style={{ opacity: rightIndicatorOpacity }}
       >
-        <div className="rounded-md border-4 border-green-500 px-4 py-1">
-          <span className="text-2xl font-bold text-green-500">LIKE</span>
+        <div className="rounded-md border-2 border-green-500 px-2 py-0.5">
+          <span className="text-lg font-bold text-green-500">LIKE</span>
         </div>
       </motion.div>
 
-      <Card className="w-full h-fit relative bg-white py-0 pb-10">
-        <div className="p-4 space-y-4">
+      <Card className="w-full h-fit relative bg-white py-0 pb-7">
+        <div className="p-2.5 space-y-2.5">
           <div className="flex items-center justify-between">
-            <div className="flex items-center gap-2">
-              <Clock className="w-4 h-4 text-muted-foreground" />
-              <span className="text-sm text-muted-foreground">
+            <div className="flex items-center gap-1">
+              <Clock className="w-3 h-3 text-muted-foreground" />
+              <span className="text-[10px] text-muted-foreground">
                 {Math.floor(duration / 60)}h {duration % 60}m
               </span>
-              <span className="text-sm text-muted-foreground">•</span>
-              <span className="text-sm text-muted-foreground">{year}</span>
+              <span className="text-[10px] text-muted-foreground">•</span>
+              <span className="text-[10px] text-muted-foreground">{year}</span>
             </div>
             <div className="flex items-center gap-1">
-              <span className="font-bold text-[#f5c518]">IMDb</span>
-              <span className="font-semibold">{rating}</span>
+              <span className="font-bold text-[#f5c518] text-[10px]">IMDb</span>
+              <span className="font-semibold text-[10px]">{rating}</span>
             </div>
           </div>
 
-          <div className="space-y-2">
-            <h2 className="text-2xl font-bold">{title}</h2>
-            <div className="flex flex-wrap gap-2">
+          <div className="space-y-1">
+            <h2 className="text-lg font-bold leading-tight">{title}</h2>
+            <div className="flex flex-wrap gap-1">
               {genres.map((genre) => (
                 <Badge
                   key={genre}
                   variant="secondary"
-                  className="text-sm bg-gray-300/50"
+                  className="text-[10px] px-1.5 py-0 h-4 bg-gray-300/50"
                 >
                   {genre}
                 </Badge>
@@ -161,7 +161,7 @@ function SwipeableCard({
             </div>
           </div>
 
-          <div className="relative w-full aspect-video rounded-lg overflow-hidden">
+          <div className="relative w-full aspect-video rounded-md overflow-hidden">
             <Image
               src={imageUrl}
               alt={title}
@@ -172,22 +172,22 @@ function SwipeableCard({
             />
           </div>
 
-          <div className="space-y-2.5">
-            <div className="flex items-center gap-2">
-              <Trophy className="w-4 h-4 text-yellow-500" />
-              <span className="text-sm">#{imdbRank} on IMDb Top 250</span>
+          <div className="">
+            <div className="flex items-center gap-1">
+              <Trophy className="w-3 h-3 text-yellow-500" />
+              <span className="text-[10px]">#{imdbRank} on IMDb Top 250</span>
             </div>
             {awards.map((award, index) => (
-              <div key={index} className="flex items-center gap-2">
-                <Award className="w-4 h-4 text-yellow-500" />
-                <span className="text-sm">{award}</span>
+              <div key={index} className="flex items-center gap-1">
+                <Award className="w-3 h-3 text-yellow-500" />
+                <span className="text-[10px]">{award}</span>
               </div>
             ))}
             {actors
               .filter((actor) => actor.isLiked)
               .map((actor) => (
-                <div key={actor.name} className="flex items-center gap-2">
-                  <div className="relative w-6 h-6 rounded-full overflow-hidden">
+                <div key={actor.name} className="flex items-center gap-1">
+                  <div className="relative w-4 h-4 rounded-full overflow-hidden">
                     <Image
                       src={actor.imageUrl}
                       alt={actor.name}
@@ -196,7 +196,7 @@ function SwipeableCard({
                       draggable={false}
                     />
                   </div>
-                  <span className="text-sm">
+                  <span className="text-[10px]">
                     The actor you love {actor.name} is in this movie
                   </span>
                 </div>
@@ -204,22 +204,22 @@ function SwipeableCard({
           </div>
         </div>
 
-        <div className="absolute bottom-0 left-0 right-0 flex justify-between p-4">
+        <div className="absolute bottom-0 left-0 right-0 flex justify-between p-2.5">
           <Button
             variant="outline"
             size="icon"
-            className="rounded-full"
+            className="rounded-full h-7 w-7"
             onClick={() => onSwipe("left")}
           >
-            <X className="w-4 h-4" />
+            <X className="w-3 h-3" />
           </Button>
           <Button
             variant="outline"
             size="icon"
-            className="rounded-full"
+            className="rounded-full h-7 w-7"
             onClick={() => onSwipe("right")}
           >
-            <Heart className="w-4 h-4" />
+            <Heart className="w-3 h-3" />
           </Button>
         </div>
       </Card>

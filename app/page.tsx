@@ -11,8 +11,6 @@ const HomePage: React.FC = () => {
       <Container>
         <Benefits />
 
-        <FAQ />
-
         <CTA />
       </Container>
     </>
